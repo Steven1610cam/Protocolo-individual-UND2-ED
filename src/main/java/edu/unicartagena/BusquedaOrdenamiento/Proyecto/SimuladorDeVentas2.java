@@ -1,5 +1,8 @@
 package edu.unicartagena.BusquedaOrdenamiento.Proyecto;
 
+import java.util.Arrays;
+import java.util.Scanner;
+
 /**
  *
  * @author STEVEN AF
@@ -49,6 +52,45 @@ public class SimuladorDeVentas2 {
         
         System.out.println("El producto más vendido fue: " + productos[maxIndex] +
                            " con " + cantidades[maxIndex] + " unidades.");
+        
+        //Busqueda 
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.print("\nIngrese el nombre de un producto para buscar (lineal): ");
+        String buscado = sc.nextLine();
+        busquedaLineal(productos, buscado);
+
+        System.out.print("\nIngrese el nombre de un producto para buscar (binaria): ");
+        String buscado2 = sc.nextLine();
+        busquedaBinaria(productos, buscado2);
+    }
+
+    // Búsqueda lineal
+    public static void busquedaLineal(String[] productos, String nombre) {
+        boolean encontrado = false;
+        for (int i = 0; i < productos.length; i++) {
+            if (productos[i].equalsIgnoreCase(nombre)) {
+                System.out.println("[LINEAL] Producto encontrado: " + productos[i] +
+                        " en la posición " + i);
+                encontrado = true;
+                break;
+            }
+        }
+        if (!encontrado) {
+            System.out.println("[LINEAL] Producto no encontrado.");
+        }
+    }
+
+    // Búsqueda binaria
+    public static void busquedaBinaria(String[] productos, String nombre) {
+        Arrays.sort(productos); // ordenar antes
+        int index = Arrays.binarySearch(productos, nombre);
+        if (index >= 0) {
+            System.out.println("[BINARIA] Producto encontrado: " + productos[index] +
+                    " en la posición " + index);
+        } else {
+            System.out.println("[BINARIA] Producto no encontrado.");
+        }   
     }
 
 }
