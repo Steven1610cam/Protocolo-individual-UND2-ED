@@ -1,5 +1,7 @@
 package edu.unicartagena.BusquedaOrdenamiento;
 
+import edu.unicartagena.BusquedaOrdenamiento.Proyecto.SimuladorDeVentas2;
+
 /**
  *
  * @author Steven
@@ -7,6 +9,8 @@ package edu.unicartagena.BusquedaOrdenamiento;
 public class ProtocoloIndividual_DanielArroyo_Unidad2 {
 
     public static void main(String[] args) {
-        System.out.println("comenecemos con el protocolo individual de la unidad 2");
+        
+        SimuladorDeVentas2.ejecutar();
+        
     }
 }

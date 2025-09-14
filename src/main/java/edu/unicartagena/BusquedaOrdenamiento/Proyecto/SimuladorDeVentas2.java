@@ -14,9 +14,7 @@ public class SimuladorDeVentas2 {
         double precios[] = {1000, 2500, 25000, 2500, 1500};
         int cantidades[] = {10, 5, 2, 5, 12};
         
-        
-        
-        
+               
         // Total por producto
         double totales[] = new double[productos.length];
         for (int i = 0; i < productos.length; i++) {
